@@ -11,7 +11,7 @@ export class NavComponent implements OnInit {
   model: any = {};
 
   constructor(
-    private authservice: AuthService,
+    public authservice: AuthService,
     private alertify: AlertifyService
   ) {}
 
