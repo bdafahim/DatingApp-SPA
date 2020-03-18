@@ -13,7 +13,6 @@ import { AuthService } from "./_services/auth.service";
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
 import { MemberListComponent } from "./member-list/member-list.component";
-import { ListComponent } from "./list/list.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { ListsComponent } from "./lists/lists.component";
 import { appRoutes } from "./routes";
@@ -25,7 +24,6 @@ import { appRoutes } from "./routes";
     HomeComponent,
     RegisterComponent,
     MemberListComponent,
-    ListComponent,
     MessagesComponent,
     ListsComponent
   ],
