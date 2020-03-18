@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../_services/auth.service";
 import { AlertifyService } from "../_services/alertify.service";
 import { Router } from "@angular/router";
-import { threadId } from "worker_threads";
 
 @Component({
   selector: "app-nav",
