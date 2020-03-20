@@ -33,6 +33,27 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-8"></div>
+    <div class="col-sm-8">
+      <div class="tab-panel">
+        <tabset class="member-tabset">
+          <tab heading="About {{ user?.knownAs }}">
+            <h4>Description</h4>
+            <p>{{ user?.introduction }}</p>
+            <h4>Looking For</h4>
+            <p>{{ user?.lookingFor }}</p>
+          </tab>
+          <tab heading="Interests">
+            <h4>Interests</h4>
+            <p>{{ user?.interests }}</p>
+          </tab>
+          <tab heading="Photos">
+            <h4>Photos will shown here</h4>
+          </tab>
+          <tab heading="Messages">
+            <h4>Messages will shown here</h4>
+          </tab>
+        </tabset>
+      </div>
+    </div>
   </div>
 </div>
