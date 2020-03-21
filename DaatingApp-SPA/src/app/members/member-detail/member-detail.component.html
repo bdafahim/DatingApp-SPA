@@ -49,7 +49,13 @@
             <p>{{ user?.interests }}</p>
           </tab>
           <tab heading="Photos">
-            <h4>Photos will shown here</h4>
+            <div>
+              <img
+                class="card-img-top img-thumnail"
+                src="{{ user.photoUrl }}"
+                alt="{{ user.knownAs }}"
+              />
+            </div>
           </tab>
           <tab heading="Messages">
             <h4>Messages will shown here</h4>
