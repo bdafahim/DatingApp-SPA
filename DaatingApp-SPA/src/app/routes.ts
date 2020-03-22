@@ -8,6 +8,7 @@ import { MemberDetailComponent } from "./members/member-detail/member-detail.com
 import { MemberDetailResolver } from "./_resolvers/member-detail.resolver";
 import { MemberListlResolver } from "./_resolvers/member-list.resolver";
 import { MemberEditComponent } from "./members/member-edit/member-edit.component";
+import { MemberEditlResolver } from "./_resolvers/member-edit.resolver";
 
 export const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -26,7 +27,11 @@ export const appRoutes: Routes = [
         component: MemberDetailComponent,
         resolve: { user: MemberDetailResolver }
       },
-      { path: "member/edit", component: MemberEditComponent },
+      {
+        path: "member/edit",
+        component: MemberEditComponent,
+        resolve: { user: MemberEditlResolver }
+      },
       { path: "messages", component: MessagesComponent },
       { path: "lists", component: ListsComponent }
     ]

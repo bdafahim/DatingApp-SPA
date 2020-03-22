@@ -26,6 +26,7 @@ import { MemberDetailComponent } from "./members/member-detail/member-detail.com
 import { MemberDetailResolver } from "./_resolvers/member-detail.resolver";
 import { MemberListlResolver } from "./_resolvers/member-list.resolver";
 import { MemberEditComponent } from "./members/member-edit/member-edit.component";
+import { MemberEditlResolver } from "./_resolvers/member-edit.resolver";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -60,7 +61,12 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [AuthService, MemberDetailResolver, MemberListlResolver],
+  providers: [
+    AuthService,
+    MemberDetailResolver,
+    MemberListlResolver,
+    MemberEditlResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
