@@ -6,11 +6,9 @@
     </div>
 
     <div class="col-sm-8">
-      <div class="alert alert-info">
-        <p>
-          <strong>Information</strong>you have made changes. Any unsaved changes
-          will be lost
-        </p>
+      <div *ngIf="editForm.dirty" class="alert alert-info">
+        <strong>Information</strong>you have made changes. Any unsaved changes
+        will be lost
       </div>
     </div>
   </div>
@@ -51,7 +49,7 @@
       <div class="tab-panel">
         <tabset class="member-tabset">
           <tab heading="Edit Profile">
-            <form>
+            <form #editForm="ngForm">
               <h4>Description</h4>
               <textarea
                 name="introduction"
@@ -81,7 +79,7 @@
                   class="form-control"
                   type="text"
                   name="city"
-                  [(ngModel)]="user.city"
+                  [(ngModel)]="user.city!"
                 />
                 <label for="country">Country</label>
                 <input
