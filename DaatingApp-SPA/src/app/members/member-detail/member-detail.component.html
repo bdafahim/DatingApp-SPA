@@ -53,11 +53,7 @@
           </tab>
           <tab heading="Photos">
             <div>
-              <img
-                class="card-img-top img-thumnail"
-                src="{{ user.photoUrl }}"
-                alt="{{ user.knownAs }}"
-              />
+              <app-gallery-photos [photos]="user.photos"></app-gallery-photos>
             </div>
           </tab>
           <tab heading="Messages">

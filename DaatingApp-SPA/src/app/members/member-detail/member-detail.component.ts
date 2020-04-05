@@ -12,7 +12,7 @@ import { from } from "rxjs";
 @Component({
   selector: "app-member-detail",
   templateUrl: "./member-detail.component.html",
-  styleUrls: ["./member-detail.component.css"]
+  styleUrls: ["./member-detail.component.css"],
 })
 export class MemberDetailComponent implements OnInit {
   user: User;
@@ -26,7 +26,7 @@ export class MemberDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.data.subscribe(data => {
+    this.route.data.subscribe((data) => {
       this.user = data["user"];
     });
 

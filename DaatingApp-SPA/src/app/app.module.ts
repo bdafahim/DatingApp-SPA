@@ -1,7 +1,7 @@
 import {
   BrowserModule,
   HammerGestureConfig,
-  HAMMER_GESTURE_CONFIG
+  HAMMER_GESTURE_CONFIG,
 } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
@@ -29,7 +29,8 @@ import { MemberListlResolver } from "./_resolvers/member-list.resolver";
 import { MemberEditComponent } from "./members/member-edit/member-edit.component";
 import { MemberEditlResolver } from "./_resolvers/member-edit.resolver";
 import { PreventUnsavedChanges } from "./_guards/prvent-unsaved-changes.guard";
-import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { PhotoEditorComponent } from "./members/photo-editor/photo-editor.component";
+import { GalleryPhotosComponent } from "./members/gallery-photos/gallery-photos.component";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -47,7 +48,8 @@ export function tokenGetter() {
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    GalleryPhotosComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,17 +66,17 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ["localhost:5000"],
-        blacklistedRoutes: ["localhost:5000/api/auth"]
-      }
-    })
+        blacklistedRoutes: ["localhost:5000/api/auth"],
+      },
+    }),
   ],
   providers: [
     AuthService,
     MemberDetailResolver,
     MemberListlResolver,
     MemberEditlResolver,
-    PreventUnsavedChanges
+    PreventUnsavedChanges,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
