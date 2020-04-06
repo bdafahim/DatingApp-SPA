@@ -18,6 +18,7 @@ export class PhotoEditorComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
+    console.log("111111111111111");
     this.initializeUploader();
   }
 
@@ -26,18 +27,23 @@ export class PhotoEditorComponent implements OnInit {
   }
 
   initializeUploader() {
+    console.log("inside initialuploader");
     this.uploader = new FileUploader({
       url:
         this.baseUrl +
         "users/" +
         this.authService.decodedToken.nameid +
         "/photos",
-      authToken: "Bearer" + localStorage.getItem("token"),
+      authToken: "Bearer " + localStorage.getItem("token"),
       isHTML5: true,
       allowedFileType: ["image"],
       removeAfterUpload: true,
       autoUpload: false,
       maxFileSize: 10 * 1024 * 1024,
     });
+    console.log("************************");
+    this.uploader.onAfterAddingFile = (file) => {
+      file.withCredentials = false;
+    };
   }
 }
