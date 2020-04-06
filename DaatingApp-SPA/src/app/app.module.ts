@@ -11,6 +11,7 @@ import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { JwtModule } from "@auth0/angular-jwt";
+import { FileUploadModule } from "ng2-file-upload";
 
 import { AppComponent } from "./app.component";
 import { from } from "rxjs";
@@ -62,6 +63,7 @@ export function tokenGetter() {
     TabsModule.forRoot(),
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
+    FileUploadModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
