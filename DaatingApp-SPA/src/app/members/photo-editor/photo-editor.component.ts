@@ -18,7 +18,6 @@ export class PhotoEditorComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    console.log("111111111111111");
     this.initializeUploader();
   }
 
@@ -41,7 +40,6 @@ export class PhotoEditorComponent implements OnInit {
       autoUpload: false,
       maxFileSize: 10 * 1024 * 1024,
     });
-    console.log("************************");
     this.uploader.onAfterAddingFile = (file) => {
       file.withCredentials = false;
     };
