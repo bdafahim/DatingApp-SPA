@@ -9,7 +9,7 @@ import { AuthService } from "src/app/_services/auth.service";
 @Component({
   selector: "app-member-edit",
   templateUrl: "./member-edit.component.html",
-  styleUrls: ["./member-edit.component.css"]
+  styleUrls: ["./member-edit.component.css"],
 })
 export class MemberEditComponent implements OnInit {
   @ViewChild("editForm", { static: true }) editForm: NgForm;
@@ -29,7 +29,7 @@ export class MemberEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.data.subscribe(data => {
+    this.route.data.subscribe((data) => {
       this.user = data["user"];
     });
   }
@@ -38,13 +38,17 @@ export class MemberEditComponent implements OnInit {
     this.userService
       .updateUser(this.authService.decodedToken.nameid, this.user)
       .subscribe(
-        next => {
+        (next) => {
           this.alertify.success("Profile updated");
           this.editForm.reset(this.user);
         },
-        error => {
+        (error) => {
           this.alertify.error(error);
         }
       );
+  }
+
+  updateMainPhoto(photoUrl) {
+    this.user.photoUrl = photoUrl;
   }
 }
