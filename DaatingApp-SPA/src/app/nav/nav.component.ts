@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-nav",
   templateUrl: "./nav.component.html",
-  styleUrls: ["./nav.component.css"]
+  styleUrls: ["./nav.component.css"],
 })
 export class NavComponent implements OnInit {
   model: any = {};
@@ -21,10 +21,10 @@ export class NavComponent implements OnInit {
 
   login() {
     this.authservice.login(this.model).subscribe(
-      next => {
+      (next) => {
         this.alertify.success("logged in successfully");
       },
-      error => {
+      (error) => {
         this.alertify.error("Log in failed");
       },
       () => {
