@@ -16,8 +16,9 @@ export class UserService {
 
   getUsers(
     page?,
-    itemsPerPage?
-    // userParams?
+    itemsPerPage?,
+    // userParams?,
+    likesParam?
   ): Observable<PaginatedResult<User[]>> {
     const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<
       User[]
@@ -35,6 +36,14 @@ export class UserService {
     //   params = params.append("maxAge", userParams.maxAge);
     //   params = params.append("gender", userParams.gender);
     // }
+
+    if (likesParam === "Likers") {
+      params = params.append("likers", "true");
+    }
+
+    if (likesParam === "Likees") {
+      params = params.append("likees", "true");
+    }
 
     return this.http
       .get<User[]>(this.baseUrl + "users", { observe: "response", params })
@@ -54,7 +63,7 @@ export class UserService {
     return this.http.get<User>(this.baseUrl + "users/" + id);
   }
 
-  updateUser(id: Number, user: User) {
+  updateUser(id: number, user: User) {
     return this.http.put(this.baseUrl + "users/" + id, user);
   }
 
