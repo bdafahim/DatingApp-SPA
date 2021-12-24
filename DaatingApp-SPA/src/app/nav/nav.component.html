@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-  <a class="navbar-brand" [routerLink]="['/home']">Dating App</a>
+  <a *ngIf="loggedIn()" class="navbar-brand" [routerLink]="['/members']">Dating App</a>
+  <a *ngIf="!loggedIn()" class="navbar-brand" [routerLink]="['/home']">Dating App</a>
 
   <div class="container">
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
